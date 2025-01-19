@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+body {
+    background: #08021f
+   
+}
+.d{
+width: 80%;
+    margin: 0 auto;
+    padding:  10px;
+    background:#08021f
+}
+
+.b1 a {
+    color: white;
+    background-color:#0d042e ;
+    margin: 10px;
+    padding: 50px 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+.s3 {
+    color: white;
+    background-color: #0d042e;
+    margin: 50px;
+    padding: 50px 20px;
+    border-radius: 20px;
+    position: relative;
+    padding: 10px;
+}
+    
+
