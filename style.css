@@ -1,56 +1,51 @@
-*{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh ;
+    background: #040322;
+    overflow: hidden;
 }
-html , body{
+.scope {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: slide 30s linear infinite;
+}
+.scope span {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background:#040322 ;
-}
-.banner{
-    width:80%;
-    height: 100vh;
-    display: flex;
-    justify-self:center;
-    align-items: center;
-    gap: 1rem;
+    transform-origin:center;
     transform-style: preserve-3d;
-    transform: perspective(1000px);
+    transform: rotateY(calc(var(--i) * 45deg))
+    translateZ(350px);
 }
-.banner .item{
-    width: 10rem;
-    height: 20rem;
-    cursor: pointer;
-    transition: 0.5s;
-    filter: brightness(0);
-}
-.banner .item:hover{
-    filter: brightness(1);
-    transform: translateZ(100px);
-}
-.banner .item:hover + *{
-    filter: brightness(0.6);
-    transform: translateZ(150px) rotatey(40deg);
-} 
-.banner .item:hover + * + *{
-    filter: brightness(0.4);
-    transform: translateZ(70px) rotatey(20deg);
-} 
-.banner .item:has(+*:hover){
-    filter: brightness(0.6);
-    transform: translateZ(150px) rotatey(-40deg);
-}
-.banner .item:has(+ * + *:hover){
-    filter: brightness(0.4);
-    transform: translateZ(70px) rotatey(-20deg);
-}
-.item img{
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
+.scope span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 2s;
 
 }
-
-
-
+.scope span:hover img {
+    transform: translateY(-50px) scale(1.1);
+}
+@keyframes slide {
+0%{
+    transform:perspective(1000px) rotateY(0deg);
+}
+100%{
+    transform: perspective(1000px) rotateY(360deg);
+}
+}
